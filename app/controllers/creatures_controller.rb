@@ -17,6 +17,16 @@ class CreaturesController < ApplicationController
     @creature = Creature.find(creature_id)
   end
 
+  def edit
+    @creature = Creature.find(creature_id)
+  end
+
+  def update
+    @creature = Creature.find(creature_id)
+    @creature.update(creature_params)
+    redirect_to @creature
+  end
+
   private
 
   def creature_params
@@ -26,5 +36,5 @@ class CreaturesController < ApplicationController
   def creature_id
     params[:id]
   end
-  
+
 end
