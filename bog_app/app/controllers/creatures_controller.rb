@@ -12,7 +12,7 @@ class CreaturesController < ApplicationController
   end
 
   def create
-    creature_params = params.require(:creature_).permit(:name, :description)
+    creature_params = params.require(:creature).permit(:name, :description)
 
     creature = Creature.new(creature_params)
 
